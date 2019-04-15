@@ -1,5 +1,20 @@
+# Создать матрицу случайных чисел и сохранить ее в json файл.
+# После прочесть ее, обнулить все четные элементы
+# и сохранить в другой файл. [my-files-t01]
+
+
 import json
 from random import randint
+
+
+def create_matrix(random_from=1, random_to=10):
+    random_matrix = []
+    for i in range(3):
+        row = []
+        for j in range(3):
+            row.append((randint(random_from, random_to)))
+        random_matrix.append(row)
+    return random_matrix
 
 
 def print_matrix(filename, matrix):
@@ -17,15 +32,6 @@ def read_matrix(filename):
     return matrix
 
 
-def create_matrix(random_from=1, random_to=10):
-    random_matrix = []
-    for i in range(3):
-        row = []
-        for j in range(3):
-            row.append((randint(random_from, random_to)))
-        random_matrix.append(row)
-    return random_matrix
-
 def main():
 
     print_matrix('task_10_5_1.txt', create_matrix())
@@ -36,6 +42,7 @@ def main():
                 matrix[i][j] = 0
 
     print_matrix('task_10_5_2.txt', matrix)
+
 
 if __name__ == '__main__':
         main()
