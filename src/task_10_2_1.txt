@@ -1,0 +1,3 @@
+hello 10
+privet 01
+looool 1001
